@@ -6,7 +6,7 @@ with open('README.md') as f:
     LONG_DESCRIPTION = f.read()
 
 setuptools.setup(
-    name="RnaSeqTools",
+    name="RNASeqTools",
     version=get_versions(),
     author="Yuxing Xu",
     author_email="xuyuxing@mail.kib.ac.cn",
@@ -22,10 +22,12 @@ setuptools.setup(
     packages=setuptools.find_packages(),
 
     install_requires=[
-        "toolbiox>=0.0.28",
-        "bcbio-gff>=0.6.6",
-        "pyfaidx>=0.5.5.2",
+        "toolbiox>=0.0.40",
+        "interlap>=0.2.6",
         "numpy>=1.18.1",
+        "bcbio-gff>=0.6.6",
+        "biopython<=1.80",
+        "pyfaidx>=0.5.5.2",        
     ],
 
     include_package_data=True,
