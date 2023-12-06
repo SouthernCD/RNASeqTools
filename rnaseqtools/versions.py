@@ -4,10 +4,18 @@ def get_versions():
 
 versions = [
     {
+        "number": "0.0.3",
+        "features": [
+            "1. Fix some spelling mistakes",
+            "2. Finish the readme of Count2TMM and GetGeneLength",
+            "3. Fit the new version of ToolBox",
+        ],
+    },
+    {
         "number": "0.0.2",
         "features": [
             "1. Add blat mapping for DenovoCount2RefCount",
-            "2. rearrange the code",
+            "2. Rearrange the code",
             "3. Finish the readme of DenovoCount2RefCount",
         ],
     },

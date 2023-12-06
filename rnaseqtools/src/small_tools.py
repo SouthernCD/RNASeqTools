@@ -55,8 +55,8 @@ def Count2TMM_main(args):
     cmd_run(cmd_string)
 
 
-def GetGeneLength_main(args):
-    gff_dict = read_gff_file(args.gff_file)
+def get_gene_length_dict(gff_file):
+    gff_dict = read_gff_file(gff_file)
 
     gene_length_dict = {}
     for i in gff_dict:
@@ -72,6 +72,12 @@ def GetGeneLength_main(args):
                 if gene_length > gene_max_length:
                     gene_max_length = gene_length
             gene_length_dict[j] = gene_max_length
+
+    return gene_length_dict
+
+
+def GetGeneLength_main(args):
+    gene_length_dict = get_gene_length_dict(args.gff_file)
 
     with open(args.gene_length_file, 'w') as f:
         for i in gene_length_dict:

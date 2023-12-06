@@ -1,4 +1,4 @@
-from toolbiox.api.common.genome.blast import outfmt6_read_big
+from toolbiox.api.common.mapping.blast import outfmt6_read_big
 from toolbiox.lib.common.os import get_file_dir
 from toolbiox.lib.xuyuxing.evolution.taxonomy import read_tax_record_dict_db
 

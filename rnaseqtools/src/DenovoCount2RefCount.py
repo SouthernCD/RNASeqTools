@@ -1,10 +1,10 @@
 from toolbiox.lib.common.os import cmd_run, mkdir, ln_file, have_file
-from toolbiox.api.common.genome.psl import read_psf_file
+from toolbiox.api.common.mapping.psl import read_psl_file
 from toolbiox.lib.common.genome.seq_base import read_fasta_by_faidx
 from toolbiox.lib.common.genome.genome_feature2 import read_gff_file, Genome
 from toolbiox.lib.common.fileIO import tsv_file_dict_parse_big
 from interlap import InterLap
-from toolbiox.api.common.genome.blast import outfmt6_read_big, hit_CIP, hit_CALP
+from toolbiox.api.common.mapping.blast import outfmt6_read_big, hit_CIP, hit_CALP
 
 
 def run_blat(ref_genome_fasta, de_novo_fasta, work_dir):
@@ -35,7 +35,7 @@ def read_rsem_gene_results(rsem_gene_results):
 
 
 def get_unigene_hits_dict_from_blat_results(blat_results_file, tt2tg_dict, coverage_threshold=0.6):
-    psl_gf_dict = read_psf_file(blat_results_file)
+    psl_gf_dict = read_psl_file(blat_results_file)
 
     unigene_hits_dict = {}
     for hit_id in psl_gf_dict:
