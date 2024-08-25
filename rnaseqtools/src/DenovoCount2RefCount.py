@@ -1,10 +1,7 @@
-from toolbiox.lib.common.os import cmd_run, mkdir, ln_file, have_file
-from toolbiox.api.common.mapping.psl import read_psl_file
-from toolbiox.lib.common.genome.seq_base import read_fasta_by_faidx
-from toolbiox.lib.common.genome.genome_feature2 import read_gff_file, Genome
-from toolbiox.lib.common.fileIO import tsv_file_dict_parse_big
+from yxutil import cmd_run, mkdir, ln_file, have_file, tsv_file_dict_parse_big
+from yxalign import read_psl_file, outfmt6_read_big, hit_CIP, hit_CALP
+from yxseq import read_fasta_by_faidx, read_gff_file, Genome
 from interlap import InterLap
-from toolbiox.api.common.mapping.blast import outfmt6_read_big, hit_CIP, hit_CALP
 
 
 def run_blat(ref_genome_fasta, de_novo_fasta, work_dir):
@@ -68,7 +65,8 @@ def get_ref_gene_to_unigene_map_by_blast(ref_genome_fasta, ref_genome_gff, de_no
         if ref_cDNA_fasta:
             ln_file(ref_cDNA_fasta, cDNA_fasta_file)
         else:
-            ref_genome = Genome(genome_file=ref_genome_fasta, gff_file=ref_genome_gff)
+            ref_genome = Genome(genome_file=ref_genome_fasta,
+                                gff_file=ref_genome_gff)
             ref_genome.genome_feature_parse()
             ref_genome.build_gene_sequence()
 
@@ -77,7 +75,7 @@ def get_ref_gene_to_unigene_map_by_blast(ref_genome_fasta, ref_genome_gff, de_no
                     gf = ref_genome.feature_dict['gene'][gene_id]
                     OUT.write(">{}\n{}\n".format(
                         gene_id, gf.model_cDNA_seq))
-                
+
     ref_gene_dict = read_fasta_by_faidx(cDNA_fasta_file)
 
     # blast

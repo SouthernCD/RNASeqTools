@@ -1,6 +1,6 @@
-from toolbiox.api.common.mapping.blast import outfmt6_read_big
-from toolbiox.lib.common.os import get_file_dir
-from toolbiox.lib.xuyuxing.evolution.taxonomy import read_tax_record_dict_db
+from yxalign import outfmt6_read_big
+from yxutil import get_file_dir
+from taxontools import read_taxon_record_dict_db
 
 
 def ContaminationDetector_main(args):
@@ -18,7 +18,7 @@ def ContaminationDetector_main(args):
 
     bls_results_file, taxon_db_file, target_taxon = args.bls_results_file, args.taxon_db_file, args.target_taxon
 
-    taxon_dict = read_tax_record_dict_db(taxon_db_file)
+    taxon_dict = read_taxon_record_dict_db(taxon_db_file)
 
     try:
         target_taxon = str(int(target_taxon))

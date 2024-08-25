@@ -4,11 +4,17 @@ def get_versions():
 
 versions = [
     {
+        "number": "0.0.4",
+        "features": [
+            "1. Remove the dependency of ToolBiox",
+        ],
+    },
+    {
         "number": "0.0.3",
         "features": [
             "1. Fix some spelling mistakes",
             "2. Finish the readme of Count2TMM and GetGeneLength",
-            "3. Fit the new version of ToolBox",
+            "3. Fit the new version of ToolBiox",
         ],
     },
     {

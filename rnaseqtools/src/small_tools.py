@@ -1,7 +1,6 @@
-from toolbiox.lib.common.fileIO import read_matrix_file
-from toolbiox.lib.common.genome.genome_feature2 import read_gff_file, Gene
-from toolbiox.lib.common.os import cmd_run
-from rnaseqtools.src.fpkm import get_TPM_matrix, get_FPKM_matrix
+from yxutil import read_matrix_file, cmd_run
+from yxseq import read_gff_file, Gene
+from .fpkm import get_TPM_matrix, get_FPKM_matrix
 
 
 def Count2TMM_main(args):

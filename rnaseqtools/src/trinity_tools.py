@@ -1,7 +1,7 @@
 from BCBio import GFF
 from pyfaidx import Fasta
-from toolbiox.lib.common.fileIO import tsv_file_dict_parse
-from toolbiox.lib.common.genome.seq_base import read_fasta_big
+from yxutil import tsv_file_dict_parse
+from yxseq import read_fasta_big
 import os
 import re
 

@@ -22,7 +22,10 @@ setuptools.setup(
     packages=setuptools.find_packages(),
 
     install_requires=[
-        "toolbiox>=0.0.40",
+        "yxutil",
+        "yxseq",
+        "yxalign",
+        "taxontools",
         "interlap>=0.2.6",
         "numpy>=1.18.1",
         "bcbio-gff>=0.6.6",
